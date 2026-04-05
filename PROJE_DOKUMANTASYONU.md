@@ -191,3 +191,28 @@ pytest tests/
 
 - **[TTS_STUDIO.md](TTS_STUDIO.md)** — UI features, voice IDs, XTTS language list, known issues.
 - **[README.md](README.md)** — Library usage, Colab cells, espeak-ng, conda hints.
+
+---
+
+## 11. Publishing to your own GitHub
+
+Suggested **repository name:** **`kokoro-tts-studio`** (clear, searchable, not confused with the upstream library name alone).
+
+This clone uses **`upstream`** for [hexgrad/kokoro](https://github.com/hexgrad/kokoro) so you can `git fetch upstream` / `git merge upstream/main` later. Your GitHub copy is **`origin`** after you publish.
+
+1. Install [GitHub CLI](https://cli.github.com/) (Windows: `winget install GitHub.cli`).
+2. Log in once: `gh auth login` (browser or token).
+3. From the repo root run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\publish-to-github.ps1
+```
+
+That creates **`https://github.com/<your-account>/kokoro-tts-studio`** (public), adds **`origin`**, and pushes **`main`**.
+
+**Manual alternative:** create an empty public repo named `kokoro-tts-studio` on GitHub (no README), then:
+
+```bash
+git remote add origin https://github.com/YOUR_USERNAME/kokoro-tts-studio.git
+git push -u origin main
+```
