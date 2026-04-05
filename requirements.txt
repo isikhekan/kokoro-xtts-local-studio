@@ -1,0 +1,23 @@
+# Kokoro + TTS Studio — Python bağımlılıkları
+# Kurulum: pip install -U pip && pip install -r requirements.txt
+#
+# Yerel kaynak paket (-e .) pyproject.toml içindeki çekirdek bağımlılıkları da kurar:
+#   huggingface_hub, loguru, misaki[en]>=0.9.4, numpy, torch, transformers
+# Python sürümü: 3.10 – 3.13 (pyproject: <3.14). Önerilen: 3.11 veya 3.12.
+
+# Kokoro paketi (bu depo kökünden düzenlenebilir kurulum)
+-e .
+
+# ── TTS Studio (tts_ui.py) ──────────────────────────────────────────────────
+gradio>=4.0.0
+scipy
+soundfile
+
+# ── XTTS-v2 sekmesi (coqui-tts) ─────────────────────────────────────────────
+# İlk kullanımda model ~2 GB indirilebilir. Sadece Kokoro kullanacaksanız yorum satırı yapın.
+coqui-tts
+
+# ── PyTorch ve CUDA (isteğe bağlı) ───────────────────────────────────────────
+# Varsayılan kurulum CPU torch getirir. NVIDIA için örnek (sürümü pytorch.org’dan doğrulayın):
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+# Ardından bu dosyayı çalıştırın.

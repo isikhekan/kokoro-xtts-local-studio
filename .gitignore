@@ -169,3 +169,24 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# ── IDE / editör (commit edilmesi gerekmeyen yerel ayarlar) ─────────────────
+.idea/
+.vscode/
+*.code-workspace
+
+# ── İşletim sistemi ───────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ── Araç / eklenti (yerel, depoya girmemeli) ─────────────────────────────────
+.claude/
+
+# ── Üretilen ses / çıktı klasörleri (yerel test çıktıları) ───────────────────
+outputs/
+generated/
+
+# ── Ortam / gizli yapılandırma ───────────────────────────────────────────────
+.env.local
+.env.*.local
